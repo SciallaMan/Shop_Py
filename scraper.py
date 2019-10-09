@@ -37,8 +37,6 @@ def search(webSites):
             titles = soup.select(shop.get('selectorTitle'))
             count = shop.get("count") if shop.get("count") < len(prices) else len(prices)
             for i in range(count):
-                # print('\n' + titles[i].text.strip() + ': ')
-                # print(prices[i].text.strip())
                 if titles[i].text.strip() and prices[i].text.strip() :
                     data.updateMsg('\n\n' + titles[i].text.strip() + ':\n' + prices[i].text.strip() + ' euro')
                     print(f"Found on {webSite}")
@@ -52,15 +50,14 @@ def search(webSites):
 
 def getUrl(webSite, product):
     switcherUrl = {
-        "Mediaworld": data.shops.get(webSite).get('url') + product.replace(" ", "%20"),
-        "Amazon": data.shops.get(webSite).get('url') + product.replace(" ", "+")
+        "Mediaworld": data.shops.get(webSite).get('url') + product.replace(" ", "%20")
     }
     return switcherUrl.get(webSite, "Invalid website")
 
 
 def sendMail():
     try:
-        # print(data.msg)
+        print(data.msg)
         server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
         server.ehlo()
         server.login(data.gmail_user, data.gmail_password)

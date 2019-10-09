@@ -1,21 +1,15 @@
 {
-    "mailSubject" : "Subject: Ecco le tue offerte\n",
-    "product" : "Xbox one s",
-
-    "activeShops": ["Mediaworld"],
-
-    "shops" : {
+    "mailSubject": "Subject: Ecco le tue offerte\n",
+    "product": "Playstation 4",
+    "activeShops": [
+        "Mediaworld"
+    ],
+    "shops": {
         "Mediaworld": {
             "url": "https://www.mediaworld.it/search/",
             "selectorPrice": ".search-product-list:nth-child(1) .product > .col-3 .price",
             "selectorTitle": ".search-product-list:nth-child(1) .product > .col-2 > .product-name > a",
             "count": 6
-        },
-        "Amazon": {
-            "url": "https://www.amazon.it/s?k=",
-            "selectorPrice": "span.a-price-whole",
-            "selectorTitle": ".search-product-list:nth-child(1) .product > .col-2 > .product-name > a",
-            "count": 3
-            }
         }
+    }
 }
